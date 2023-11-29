@@ -1,0 +1,12 @@
+/* Your CSS file */
+.icon {
+    /* Apply grayscale filter to make the icon appear grey */
+    filter: grayscale(100%);
+    transition: filter 0.3s ease-in-out;
+    /* Smooth transition for hover effect */
+}
+
+/* Change the icon back to its original color on hover */
+.icon:hover {
+    filter: grayscale(0%);
+}
