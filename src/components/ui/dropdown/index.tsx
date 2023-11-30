@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import colors from '../../../utils/colors';
 import Text from '../text';
 import { checked, unchecked } from './assets';
@@ -8,14 +8,12 @@ import { TFilter, TFilterProps } from '../../../types';
 interface DropdownProps {
     options: string[];
     className?: string
-    // onChange: (e: string[]) => void
     filteredObj?: TFilter
     setFilterObj: React.Dispatch<React.SetStateAction<TFilter>>
     attr: 'status' | 'type'
 }
 
 const Dropdown: React.FC<DropdownProps> = ({ options, filteredObj, className, attr,setFilterObj }) => {
-    // const [selectedOption, setSelectedOption] = useState<string[]>([]);
     const [showMenu, setShowMenu] = useState(false);
     const ref = useRef(null)
 
@@ -41,7 +39,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options, filteredObj, className, at
 
     const getVal = (array: string[]) => {
         return array?.map((option, index) => (
-            <Text color={colors.black_300} fontSize='14px' fontWeight={500} lineHeight='16px'>
+            <Text key = {option} color={colors.black_300} fontSize='14px' fontWeight={500} lineHeight='16px'>
                 {index < array.length - 1 ? option + ',' : option}
             </Text>
         ))
@@ -83,9 +81,9 @@ const Dropdown: React.FC<DropdownProps> = ({ options, filteredObj, className, at
                 showMenu &&
                 <div ref={ref} className="origin-top-right absolute right-0 mt-2 w-full z-50 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                     <div className="py-1">
-                        {options.map((option, index) => (
+                        {options.map((option) => (
                             <div
-                                key={index}
+                                key={option}
                                 onClick={() => handleSelection(option)}
                                 className="flex gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 cursor-pointer"
                                 role="menuitem"

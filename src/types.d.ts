@@ -19,17 +19,20 @@ type TMetadata = {
     quantity: number,
     type: string
 }
+
+export type TType = 'withdrawal' | 'deposit'
+export type TStatus = 'successful' | 'pending' | 'failed'
 export type TTransaction = {
     amount: number,
     date: string,
-    type: 'withdrawal' | 'deposit',
-    status: 'successful' | 'pending' | 'failed',
-    payment_reference: string,
-    metadata: TMetadata
+    type: TType,
+    status: TStatus,
+    payment_reference?: string,
+    metadata?: TMetadata
 }
 
 export type TFilter = {
-    days: 'Last 7 days' | 'Today' | 'This month' | 'Last 3 months'
+    days: 'Last 7 days' | 'Today' | 'This month' | 'Last 3 months' | ''
     startDate: string
     endDate: string
     status: string[]

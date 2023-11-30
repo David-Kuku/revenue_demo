@@ -6,8 +6,7 @@ import Dropdown from '../../ui/dropdown'
 import Button from '../../ui/button'
 import DateBtns from './DateBtns'
 import DateInput from '../../datePicker'
-import { TFilter, TFilterCopy, TFilterProps } from '../../../types'
-import { useEffect, useState } from 'react'
+import { TFilter, TFilterProps } from '../../../types'
 
 interface IProps {
     isOpen: boolean
@@ -41,7 +40,7 @@ const Filter = ({ isOpen, setIsOpen, filterObj, setFilterObj, applyFilters }: IP
 
                     <div>
                         <Text color={colors.black_300} fontSize='16px' fontWeight={600} lineHeight='24px' className='mb-1'>Date Range</Text>
-                        <div className='w-full flex justify-between'>
+                        <div className='w-full gap-4 flex justify-between'>
                             <DateInput onChange={(e) => handleChange(e, 'startDate')} tag='Start date' filterObj={filterObj} className='w-[100%]' />
                             <DateInput onChange={(e) => handleChange(e, 'endDate')} tag='End date' filterObj={filterObj} className='w-[40%]' />
                         </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Navbar from '../components/navbar'
 import Balance from '../components/balance'
 import { useGetUser } from '../api/hooks/useGetUser'
@@ -26,7 +26,6 @@ const Home = () => {
     const dateB = new Date(b.date);
     return dateB.getTime() - dateA.getTime();
   });
-
 
   const applyFilters = (filterObj: TFilter) => {
     const filteredByDays = filterByDays(trxData?.data, filterObj)
@@ -62,7 +61,7 @@ const Home = () => {
                   <Skeleton />
                 </div> :
                 error ?
-                  <Text color='red' fontSize='14px' fontWeight={600} lineHeight='16px' className='text-center'>{``}</Text> :
+                  <Text color='red' fontSize='14px' fontWeight={600} lineHeight='16px' className='text-center'>{`An error occured, please try again`}</Text> :
                   <>
                     <Balance walletData={walletData?.data} trxData={data} />
                     <Transactions

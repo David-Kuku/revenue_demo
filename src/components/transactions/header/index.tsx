@@ -12,7 +12,7 @@ interface IProps {
 const Header = ({ noOfTrxs, filterObj, setFilterObj, applyFilters }: IProps) => {
   return (
     <div className='flex justify-between'>
-      <HeaderText noOfTrxs={noOfTrxs} />
+      <HeaderText noOfTrxs={noOfTrxs} filterObj = {filterObj}/>
       <HeaderBtns
         filterObj={filterObj}
         setFilterObj={setFilterObj}

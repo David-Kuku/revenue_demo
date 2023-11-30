@@ -7,6 +7,7 @@ interface TextProps {
   lineHeight: string;
   children: React.ReactNode;
   className?: string
+  testId?: string
 }
 
 const Text: React.FC<TextProps> = ({
@@ -15,10 +16,11 @@ const Text: React.FC<TextProps> = ({
   fontSize,
   lineHeight,
   children,
+  testId,
   className = ''
 }: TextProps) => {
 
-  return <div className={className} style={{
+  return <div data-testid = {testId} className={className} style={{
     color,
     fontWeight,
     lineHeight,

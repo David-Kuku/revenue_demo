@@ -98,8 +98,8 @@ const Graph = ({ trxData }: IProps) => {
                             <img src={grey_line} alt='line' className='w-[95%] mt-3 ml-[30px]' />
                         </div>
                         <div className='w-full flex justify-between mt-1'>
-                            <Text color={colors.grey_400} fontSize='12px' fontWeight={500} lineHeight='14px'>{labels?.[labels.length - 1]}</Text>
-                            <Text color={colors.grey_400} fontSize='12px' fontWeight={500} lineHeight='14px'>{labels?.[0]}</Text>
+                            <Text testId ='bottom-text' color={colors.grey_400} fontSize='12px' fontWeight={500} lineHeight='14px'>{labels?.[labels.length - 1]}</Text>
+                            <Text testId ='bottom-text' color={colors.grey_400} fontSize='12px' fontWeight={500} lineHeight='14px'>{labels?.[0]}</Text>
                         </div>
                     </> :
                     <Text color={'red'} fontSize='16px' fontWeight={600} lineHeight='24px'>{`No data available`}</Text>

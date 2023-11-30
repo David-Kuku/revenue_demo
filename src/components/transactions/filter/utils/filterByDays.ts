@@ -1,7 +1,6 @@
-import { addDays, startOfDay, subMonths, subDays } from 'date-fns';
+import { startOfDay, subMonths, subDays } from 'date-fns';
 import { TFilter, TTransaction } from '../../../../types';
 
-// Assuming filterCriteria is of type TFilter
 export const filterByDays = (data: TTransaction[] | undefined, filterCriteria: TFilter): TTransaction[] | undefined => {
     let filteredData = data;
 
@@ -25,11 +24,8 @@ export const filterByDays = (data: TTransaction[] | undefined, filterCriteria: T
         });
     } else if (filterCriteria?.days === 'Last 3 months') {
         const startDate = startOfDay(subMonths(new Date('2023-03-02'), 12));
-        console.log(startDate)
         filteredData = filteredData?.filter(item => {
-            console.log(item.date)
             const itemDate = new Date(item.date);
-            console.log(itemDate)
             return startOfDay(itemDate) >= startDate && startOfDay(itemDate) <= new Date();
         });
     }

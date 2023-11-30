@@ -13,7 +13,7 @@ const UserProfile = ({ user, setShow }: IProps) => {
     const ref = useRef(null)
     useCloseOnclickOutside({ ref, setShow })
     return (
-        <div ref={ref} className='bg-[white] rounded-[20px] py-8 absolute top-[100px] right-0 w-[380px] gap-[40px] flex flex-col drop-shadow-lg'>
+        <div data-testid = 'user-profile' ref={ref} className='bg-[white] rounded-[20px] py-8 absolute top-[100px] right-0 w-[380px] gap-[40px] flex flex-col drop-shadow-lg'>
             <div className='flex px-8 gap-2 items-center'>
                 <div
                     style={{ background: 'linear-gradient(138.98deg, #5C6670 2.33%, #131316 96.28%)', color: 'white' }}

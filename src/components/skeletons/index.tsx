@@ -16,8 +16,8 @@ const Skeleton = () => {
                 </div>
                 <div className='flex flex-col justify-between w-[30%] h-[300px] relative overflow-hidden'>
                     {/* <div className='flex flex-col w-full h-full justify-between'> */}
-                    {[1, 2, 3, 4].map(() => (
-                        <div className='flex flex-col gap-[8px] w-full'>
+                    {[1, 2, 3, 4].map((item) => (
+                        <div key={item} className='flex flex-col gap-[8px] w-full'>
                             <SkeletonElement className='w-full h-3' />
                             <SkeletonElement className='w-full h-[30px]' />
                         </div>
@@ -44,7 +44,7 @@ const Skeleton = () => {
 
             <div className='w-full flex flex-col gap-[40px] items-center justify-between relative overflow-hidden'>
                 {[1, 2, 3, 4].map((i) => (
-                    <div className='w-full flex justify-between'>
+                    <div key = {i} className='w-full flex justify-between'>
                         <div className='flex w-full gap-2'>
                             <SkeletonElement className='!rounded-[50%] h-[60px] w-[70px]' />
                             <div className='w-full flex flex-col gap-2'>

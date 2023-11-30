@@ -1,4 +1,3 @@
-import React from 'react'
 import TransactionsListItem from './TransactionsListItem'
 import { TTransaction } from '../../../types'
 

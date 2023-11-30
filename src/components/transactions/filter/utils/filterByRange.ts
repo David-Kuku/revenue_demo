@@ -1,7 +1,5 @@
-import { addDays, startOfDay, subMonths, subDays } from 'date-fns';
+import { startOfDay} from 'date-fns';
 import { TFilter, TTransaction } from '../../../../types';
-
-// Assuming filterCriteria is of type TFilter
 
 export const filterByDateRange = (data: TTransaction[] | undefined, filterCriteria: TFilter): TTransaction[] | undefined => {
     let filteredData = data
@@ -9,8 +7,6 @@ export const filterByDateRange = (data: TTransaction[] | undefined, filterCriter
         const startDate = startOfDay(new Date(filterCriteria.startDate));
         const endDate = startOfDay(new Date(filterCriteria.endDate));
 
-        console.log(startDate)
-        console.log(endDate)
         filteredData = filteredData?.filter(item => {
             const itemDate = startOfDay(new Date(item.date));
             return itemDate >= startDate && itemDate <= endDate;

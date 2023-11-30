@@ -15,10 +15,10 @@ const AppBar = () => {
             <div className='flex flex-col gap-[20px] rounded-[30px] p-4 shadow-lg'>
                 {
                     items.map((item) => (
-                        <>
-                            <img src={item.img} alt='img' className={`${item.text} icon cursor-pointer`} />
-                            <Tooltip anchorSelect={`.${item.text}`} place='right'>{item.text.replace('-', ' ')}</Tooltip>
-                        </>
+                        <div key={item.text}>
+                            <img src={item.img} alt={`${item.text}`} className={`${item.text} icon cursor-pointer`} />
+                            <Tooltip anchorSelect={`.${item.text}`} place='right'>{item.text.replaceAll('-', ' ')}</Tooltip>
+                        </div>
                     ))
                 }
             </div>

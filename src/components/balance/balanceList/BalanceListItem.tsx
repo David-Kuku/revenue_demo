@@ -2,7 +2,7 @@ import React from 'react'
 import Text from '../../ui/text'
 import colors from '../../../utils/colors'
 import { info } from '../assets'
-import { formattedNumber } from '../../../utils/formatNumber'
+import { formatNumber } from '../../../utils/formatNumber'
 
 interface IProps {
     title: string
@@ -29,7 +29,7 @@ const BalanceListItem = ({ amount, title }: IProps) => {
                 fontWeight={700}
                 lineHeight='38px'
             >
-                {`USD ${formattedNumber(amount ?? 0)}`}
+                {`USD ${formatNumber(amount ?? 0)}`}
             </Text>
         </div>
     )
